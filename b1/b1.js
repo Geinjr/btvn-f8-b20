@@ -1,15 +1,11 @@
 function getFibonacci(n) {
     if (n === 1) {
         return [0, 1];
+    } else {
+        var series = getFibonacci(n - 1);
+        series.push(series[series.length - 1] + series[series.length - 2]);
+        return series;
     }
-
-    var series = [0, 1];
-
-    for (var i = 2; i <= n; i++) {
-        series.push(series[i - 1] + series[i - 2]);
-    }
-
-    return series;
 }
 
 var n = 10;
